@@ -24,13 +24,7 @@ export const GlobalProvider = ({ children }) => {
   };
   const addEmployee = (employees) => {
     dispatch({
-      type: "ADD_EMPLOYEE",
-      payload: employees,
-    });
-  };
-  const editEmployee = (employees) => {
-    dispatch({
-      type: "EDIT_EMPLOYEE",
+      type: "ADD_EMPLOYEES",
       payload: employees,
     });
   };
