@@ -7,15 +7,15 @@ export default (state, action) => {
           (employee) => employee.id !== action.payload
         ),
       };
-    case "ADD_EMPLOYEE":
+    case "ADD_EMPLOYEES":
       return {
         ...state,
-        employees: [...employees, action.payload],
+        employees: [...state.employees, action.payload],
       };
 
     case "EDIT_EMPLOYEE":
-      const updateEmployee = action.payload;
-      const updateEmployees = state.employees.map((employee) => {
+      const updatedEmployee = action.payload;
+      const updatedEmployees = state.employees.map((employee) => {
         if (employee.id === updatedEmployee.id) {
           return updatedEmployee;
         }
@@ -24,7 +24,7 @@ export default (state, action) => {
 
       return {
         ...state,
-        employees: updateEmployees,
+        employees: updatedEmployees,
       };
     default:
       return state;
